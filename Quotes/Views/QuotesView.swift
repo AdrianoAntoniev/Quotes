@@ -21,12 +21,22 @@ class QuotesView: UIView {
         return button
     }()
 
-    private(set) lazy var label: UILabel = {
+    private(set) lazy var quoteLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = .zero
         label.isSkeletonable = true
         label.font = .timesNewRoman15
+
+        return label
+    }()
+
+    private(set) lazy var authorLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = .zero
+        label.isSkeletonable = true
+        label.font = .timesNewRomanItalic13
 
         return label
     }()
@@ -37,7 +47,8 @@ class QuotesView: UIView {
         stack.axis = .vertical
         stack.spacing = 8
         stack.layoutMargins = .zero
-        stack.addArrangedSubview(label)
+        stack.addArrangedSubview(quoteLabel)
+        stack.addArrangedSubview(authorLabel)
         stack.addArrangedSubview(button)
 
         return stack
@@ -68,9 +79,4 @@ class QuotesView: UIView {
 
         backgroundColor = .white
     }
-}
-
-extension UIFont {
-    static let timesNewRoman15 = UIFont(name: "TimesNewRomanPS-BoldMT", size: 15)
-    static let timesNewRoman18 = UIFont(name: "TimesNewRomanPS-BoldMT", size: 18)
 }
