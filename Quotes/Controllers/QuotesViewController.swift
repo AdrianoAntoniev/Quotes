@@ -32,12 +32,14 @@ final class QuotesViewController: UIViewController {
     private func setup() {
         aView.button.setTitle("Get quote!", for: .normal)
         aView.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        aView.label.text = "No quote..."
+        aView.quoteLabel.text = "No quote..."
     }
 
     @objc private func buttonTapped() {
         quotedWasFetched = false
-        aView.label.showSkeleton()
+        aView.quoteLabel.showSkeleton()
+        aView.authorLabel.isHidden = false
+        aView.authorLabel.showSkeleton()
 
         let urlPath = "https://quotes.rest/qod?api_key=\(apiKey)"
 
@@ -47,14 +49,14 @@ final class QuotesViewController: UIViewController {
         URLSession.shared.dataTask(with: request, printingJson: true) { data, response, error in
             if let error {
                 Task {
-                    await self.fillLabel(withText: "Ops! Something wrong occurs: \(error.localizedDescription)")
+                    await self.fillLabels(with: "Ops! Something wrong occurs: \(error.localizedDescription)")
                     return
                 }
             }
 
             if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 429 {
                 Task {
-                    await self.fillLabel(withText: "Too many requests. Try again later")
+                    await self.fillLabels(with: "Too many requests. Try again later")
                     return
                 }
             }
@@ -64,29 +66,41 @@ final class QuotesViewController: UIViewController {
                     let decoded = try JSONDecoder().decode(QuotesModel.self, from: data)                    
 
                     Task {
-                        await self.fillLabel(withText: decoded.contents?.quotes?.first?.quote ?? "Error fetching quote")
+                        guard let quoteModel = decoded.contents?.quotes?.first, let quote = quoteModel.quote else {
+                            let error = "Error fetching quote"
+                            await self.fillLabels(with: error)
+                            return
+                        }
+
+                        await self.fillLabels(with: quote, of: quoteModel.author)
                     }
                 } catch {
                     Task {
-                        await self.fillLabel(withText: "Ops! Something wrong occurs: \(error.localizedDescription)")
+                        await self.fillLabels(with: "Ops! Something wrong occurs: \(error.localizedDescription)")
                     }
                 }
             } else {
                 Task {
-                    await self.fillLabel(withText: "Ops! Something wrong occurred...")
+                    await self.fillLabels(with: "Ops! Something wrong occurred...")
                 }
             }
         }.resume()
     }
 
-    private func fillLabel(withText text: String) {
-        guard !quotedWasFetched, !text.isEmpty else { return }
+    private func fillLabels(with quote: String, of author: String? = nil) {
+        guard !quotedWasFetched, !quote.isEmpty else { return }
 
         quotedWasFetched = true
 
         DispatchQueue.main.async {
-            self.aView.label.hideSkeleton(transition: .crossDissolve(0.25))
-            self.aView.label.text = text
+            self.aView.quoteLabel.hideSkeleton(transition: .crossDissolve(0.25))
+            self.aView.authorLabel.hideSkeleton(transition: .crossDissolve(0.25))
+            self.aView.quoteLabel.text = quote
+            if let author {
+                self.aView.authorLabel.text = author
+            } else {
+                self.aView.authorLabel.isHidden = true
+            }
         }
     }
 }
