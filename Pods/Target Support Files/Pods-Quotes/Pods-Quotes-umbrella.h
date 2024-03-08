@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_QuotesVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_QuotesVersionString[];
+FOUNDATION_EXPORT double Pods_JokesVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_JokesVersionString[];
 

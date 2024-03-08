@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Quotes
+//  Jokes
 //
 //  Created by Adriano Rodrigues Vieira on 04/02/24.
 //
@@ -13,7 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let sc = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: sc)
-        window.rootViewController = QuotesViewController()
+        window.rootViewController = JokesViewController()
         window.makeKeyAndVisible()
 
         self.window = window

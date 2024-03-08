@@ -1,6 +1,6 @@
 //
 //  UIFont+.swift
-//  Quotes
+//  Jokes
 //
 //  Created by Adriano Rodrigues Vieira on 12/02/24.
 //
@@ -11,6 +11,7 @@ extension UIFont {
     static let timesNewRoman15 = UIFont(name: .timesNewRomanBold, size: .s15)
     static let timesNewRoman18 = UIFont(name: .timesNewRomanBold, size: .s18)
     static let timesNewRomanItalic13 = UIFont(name: .timesNewRomanItalic, size: .s13)
+    static let timesNewRomanBold11 = UIFont(name: .timesNewRomanBold, size: .s11)
 }
 
 fileprivate extension String {
@@ -21,6 +22,7 @@ fileprivate extension String {
 }
 
 fileprivate extension CGFloat {
+    static let s11: Self = 11
     static let s13: Self = 13
     static let s15: Self = 15
     static let s18: Self = 18
