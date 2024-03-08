@@ -51,7 +51,6 @@ final class JokesView: UIView {
         return label
     }()
 
-
     private lazy var stack: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.translatesAutoresizingMaskIntoConstraints = false
