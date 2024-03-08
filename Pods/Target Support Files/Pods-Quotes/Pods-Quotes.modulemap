@@ -1,5 +1,5 @@
-framework module Pods_Quotes {
-  umbrella header "Pods-Quotes-umbrella.h"
+framework module Pods_Jokes {
+  umbrella header "Pods-Jokes-umbrella.h"
 
   export *
   module * { export * }

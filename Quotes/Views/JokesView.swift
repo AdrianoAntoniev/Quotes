@@ -1,6 +1,6 @@
 //
-//  QuotesView.swift
-//  Quotes
+//  JokesView.swift
+//  Jokes
 //
 //  Created by Adriano Rodrigues Vieira on 05/02/24.
 //
@@ -8,7 +8,7 @@
 import UIKit
 import SkeletonView
 
-class QuotesView: UIView {
+final class JokesView: UIView {
     private(set) lazy var button: UIButton = {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +21,7 @@ class QuotesView: UIView {
         return button
     }()
 
-    private(set) lazy var quoteLabel: UILabel = {
+    private(set) lazy var setupLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = .zero
@@ -31,7 +31,7 @@ class QuotesView: UIView {
         return label
     }()
 
-    private(set) lazy var authorLabel: UILabel = {
+    private(set) lazy var punchlineLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = .zero
@@ -41,15 +41,29 @@ class QuotesView: UIView {
         return label
     }()
 
+    private(set) lazy var typeLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = .zero
+        label.isSkeletonable = true
+        label.font = .timesNewRomanBold11
+
+        return label
+    }()
+
+
     private lazy var stack: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = 8
         stack.layoutMargins = .zero
-        stack.addArrangedSubview(quoteLabel)
-        stack.addArrangedSubview(authorLabel)
+        stack.addArrangedSubview(setupLabel)
+        stack.addArrangedSubview(punchlineLabel)
+        stack.addArrangedSubview(typeLabel)
         stack.addArrangedSubview(button)
+
+        stack.setCustomSpacing(12, after: punchlineLabel)
 
         return stack
     }()

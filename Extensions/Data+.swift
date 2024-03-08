@@ -1,6 +1,6 @@
 //
 //  Data+.swift
-//  Quotes
+//  Jokes
 //
 //  Created by Adriano Rodrigues Vieira on 12/02/24.
 //

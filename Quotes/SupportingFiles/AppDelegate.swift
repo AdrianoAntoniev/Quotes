@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Quotes
+//  Jokes
 //
 //  Created by Adriano Rodrigues Vieira on 04/02/24.
 //

@@ -10,11 +10,12 @@
 		D72DA0962B70714600BF7B28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72DA0952B70714600BF7B28 /* AppDelegate.swift */; };
 		D72DA0982B70714600BF7B28 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72DA0972B70714600BF7B28 /* SceneDelegate.swift */; };
 		D72DA09F2B70714800BF7B28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D72DA09E2B70714800BF7B28 /* Assets.xcassets */; };
-		D73565E52B70866900B555C8 /* QuotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73565E42B70866800B555C8 /* QuotesViewController.swift */; };
-		D73565E72B7086C200B555C8 /* QuotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73565E62B7086C200B555C8 /* QuotesView.swift */; };
+		D73565E52B70866900B555C8 /* JokesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73565E42B70866800B555C8 /* JokesViewController.swift */; };
+		D73565E72B7086C200B555C8 /* JokesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73565E62B7086C200B555C8 /* JokesView.swift */; };
 		D73AE83B2B7ADF1A00C3800E /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AE83A2B7ADF1A00C3800E /* Data+.swift */; };
 		D73AE83D2B7ADFA600C3800E /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AE83C2B7ADFA600C3800E /* URLSession+.swift */; };
-		D7FACDEC2B70956E000BFB12 /* QuotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FACDEB2B70956E000BFB12 /* QuotesModel.swift */; };
+		D73AE83F2B7AEBD300C3800E /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73AE83E2B7AEBD300C3800E /* UIFont+.swift */; };
+		D7FACDEC2B70956E000BFB12 /* JokeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FACDEB2B70956E000BFB12 /* JokeModel.swift */; };
 		E62A3C7698C2601117A64711 /* Pods_Quotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF40BD5190916221159760DE /* Pods_Quotes.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,11 +27,12 @@
 		D72DA0972B70714600BF7B28 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D72DA09E2B70714800BF7B28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D72DA0A32B70714800BF7B28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D73565E42B70866800B555C8 /* QuotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesViewController.swift; sourceTree = "<group>"; };
-		D73565E62B7086C200B555C8 /* QuotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesView.swift; sourceTree = "<group>"; };
+		D73565E42B70866800B555C8 /* JokesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesViewController.swift; sourceTree = "<group>"; };
+		D73565E62B7086C200B555C8 /* JokesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesView.swift; sourceTree = "<group>"; };
 		D73AE83A2B7ADF1A00C3800E /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		D73AE83C2B7ADFA600C3800E /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
-		D7FACDEB2B70956E000BFB12 /* QuotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesModel.swift; sourceTree = "<group>"; };
+		D73AE83E2B7AEBD300C3800E /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		D7FACDEB2B70956E000BFB12 /* JokeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModel.swift; sourceTree = "<group>"; };
 		E4524569566D5EF8DC3BBEAD /* Pods-Quotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotes.debug.xcconfig"; path = "Target Support Files/Pods-Quotes/Pods-Quotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +98,7 @@
 		D73AE8322B7ADC3600C3800E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D73565E62B7086C200B555C8 /* QuotesView.swift */,
+				D73565E62B7086C200B555C8 /* JokesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,7 +106,7 @@
 		D73AE8332B7ADC4D00C3800E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D7FACDEB2B70956E000BFB12 /* QuotesModel.swift */,
+				D7FACDEB2B70956E000BFB12 /* JokeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -112,7 +114,7 @@
 		D73AE8342B7ADC5D00C3800E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D73565E42B70866800B555C8 /* QuotesViewController.swift */,
+				D73565E42B70866800B555C8 /* JokesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,6 +135,7 @@
 			children = (
 				D73AE83A2B7ADF1A00C3800E /* Data+.swift */,
 				D73AE83C2B7ADFA600C3800E /* URLSession+.swift */,
+				D73AE83E2B7AEBD300C3800E /* UIFont+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,13 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D73AE83F2B7AEBD300C3800E /* UIFont+.swift in Sources */,
 				D72DA0962B70714600BF7B28 /* AppDelegate.swift in Sources */,
-				D73565E52B70866900B555C8 /* QuotesViewController.swift in Sources */,
-				D7FACDEC2B70956E000BFB12 /* QuotesModel.swift in Sources */,
+				D73565E52B70866900B555C8 /* JokesViewController.swift in Sources */,
+				D7FACDEC2B70956E000BFB12 /* JokeModel.swift in Sources */,
 				D73AE83D2B7ADFA600C3800E /* URLSession+.swift in Sources */,
 				D73AE83B2B7ADF1A00C3800E /* Data+.swift in Sources */,
 				D72DA0982B70714600BF7B28 /* SceneDelegate.swift in Sources */,
-				D73565E72B7086C200B555C8 /* QuotesView.swift in Sources */,
+				D73565E72B7086C200B555C8 /* JokesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
